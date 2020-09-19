@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./styles.scss";
+import "./styles.scoped.scss";
 import Header from "../Header";
 import Selecter from "../Selecter";
 import Detail from "../Detail";

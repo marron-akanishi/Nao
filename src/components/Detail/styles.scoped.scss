@@ -1,0 +1,14 @@
+@import "src/styles/variables";
+
+.detail {
+  width: 100%;
+  max-height: calc(100vh - #{$header-height});
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+
+  .container {
+    width: 1024px;
+    padding-top: 20px;
+  }
+}
