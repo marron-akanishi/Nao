@@ -6,9 +6,66 @@
   overflow: auto;
   display: flex;
   justify-content: center;
+  overflow: auto;
 
   .container {
-    width: 1024px;
-    padding-top: 20px;
+    width: 1040px;
+    margin: 0 20px;
+  }
+}
+
+table {
+  width: 100%;
+  min-width: 500px;
+  border-collapse: collapse;
+  margin: 20px 0;
+
+  tr {
+    border-bottom: solid 2px white;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  th {
+    position: relative;
+    text-align: left;
+    width: 30%;
+    text-align: center;
+    padding: 10px 0;
+
+    &:after {
+      display: block;
+      content: "";
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      top: calc(50% - 10px);
+      right: -10px;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+    }
+  }
+
+  @each $x in $type-color {
+    $name: nth($x, 1);
+    $color: nth($x, 2);
+    &.#{$name} {
+      th {
+        background-color: $color;
+        &:after {
+          border-left: 10px solid $color;
+        }
+      }
+    }
+  }
+
+  td {
+    text-align: left;
+    width: 70%;
+    text-align: center;
+    background-color: #eee;
+    padding: 10px 0;
   }
 }
