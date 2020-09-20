@@ -40,5 +40,6 @@
   },
   "devDependencies": {
     "craco-plugin-scoped-css": "^1.1.0"
-  }
+  },
+  "homepage": "https://marron-akanishi.github.io/Nao"
 }
