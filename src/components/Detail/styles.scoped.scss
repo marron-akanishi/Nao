@@ -2,7 +2,7 @@
 
 .detail {
   width: 100%;
-  max-height: calc(100vh - #{$header-height});
+  max-height: calc(var(--vh, 1vh) * 100 - #{$header-height});
   overflow: auto;
   display: flex;
   justify-content: center;
@@ -20,7 +20,7 @@
 }
 
 .annotation {
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 img {
@@ -29,7 +29,6 @@ img {
 
 table {
   width: 100%;
-  min-width: 500px;
   border-collapse: collapse;
   margin: 10px 0;
 
