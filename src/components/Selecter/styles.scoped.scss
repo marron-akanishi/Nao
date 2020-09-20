@@ -3,7 +3,7 @@
 .selecter {
   width: 300px;
   max-height: calc(100vh - #{$header-height});
-  border-right: solid 1px black;
+  border-right: solid 1px grey;
   overflow: auto;
 }
 
