@@ -5,7 +5,11 @@ import App from "./components/App";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {window.innerWidth < 768 ? (
+      <div className="error-msg">このサイトはPC/タブレット専用です</div>
+    ) : (
+      <App />
+    )}
   </React.StrictMode>,
   document.getElementById("root")
 );

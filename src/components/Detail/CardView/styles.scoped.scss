@@ -1,0 +1,42 @@
+.view-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .button {
+    width: 48px;
+    height: 48px;
+    background-color: #9b9b9b;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+  }
+
+  .card-view {
+    .card-name {
+      margin-bottom: 10px;
+    }
+
+    .card-msg {
+      margin-top: 10px;
+    }
+
+    img {
+      height: 400px;
+    }
+  }
+}
+
+.message {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

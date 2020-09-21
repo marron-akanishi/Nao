@@ -1,40 +1,15 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import "./styles.scoped.scss";
-import { config } from "../../app.config";
 import { Idol } from "../../models/idol";
-import { Card } from "../../models/card";
+import CardView from "./CardView";
 
 function Detail(props: { idol: Idol | undefined }) {
-  const [cardImgSrc, setCardImgSrc] = useState("");
-  const [preload, setPreload] = useState(false);
-
-  useEffect(() => {
-    setPreload(false);
-    const getCardImg = async (id: number) => {
-      const res = await axios.get<Card[]>(
-        `${config.matsurihimeCardApiUrl}?idolId=${id}`
-      );
-      const imgUrl = `${config.matsurihimeCardSrcUrl}${res.data[0].resourceId}_0_a.png`;
-      setCardImgSrc(imgUrl);
-      return imgUrl;
-    };
-
-    if (props.idol) {
-      getCardImg(props.idol.id).then((src) => {
-        const img = new Image();
-        img.src = src;
-        img.onload = () => setPreload(true);
-      });
-    }
-  }, [props.idol]);
-
   return (
     <div className="detail">
       <div className="container">
-        {props.idol && preload ? (
+        {props.idol ? (
           <>
-            <img src={cardImgSrc} alt=""></img>
+            <CardView id={props.idol.id} />
             <table className={props.idol.type.toLowerCase()}>
               <tbody>
                 <tr>
@@ -108,8 +83,6 @@ function Detail(props: { idol: Idol | undefined }) {
               様のAPIを利用しています。
             </div>
           </>
-        ) : props.idol ? (
-          <div className="message">読み込み中...</div>
         ) : (
           <div className="message">←左の一覧からアイドルを選んでください</div>
         )}
